@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f7f7f7;
+    font-family: Arial, sans-serif;
+    background-image: url('background.jpg'); /* خلفية الموقع */
+    background-size: cover;
+    background-position: center;
+}
+
+.game-container {
+    position: relative;
+    width: 600px;
+    height: 200px;
+    border: 2px solid #333;
+    background-color: #fff;
+    overflow: hidden;
+    background-image: url('game-background.png'); /* خلفية اللعبة */
+    background-size: cover;
+}
+
+#dino {
+    position: absolute;
+    bottom: 0;
+    left: 50px;
+    width: 40px;
+    height: 40px;
+    background-image: url('dino.png'); /* صورة الديناصور */
+    background-size: cover;
+}
+
+#obstacle {
+    position: absolute;
+    bottom: 0;
+    right: -40px; /* يبدأ من خارج الشاشة */
+    width: 40px;
+    height: 40px;
+    background-image: url('cactus.png'); /* صورة العائق */
+    background-size: cover;
+    animation: moveObstacle 2s linear infinite; /* الحركة */
+}
+
+#reward {
+    position: absolute;
+    bottom: 0;
+    right: -40px;
+    width: 40px;
+    height: 40px;
+    background-image: url('reward.png'); /* صورة المكافأة */
+    background-size: cover;
+    display: none;
+}
+
+#score {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 20px;
+    color: #333;
+}
+
+#reward-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: green;
+    display: none;
+}
+
+#game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    display: none;
+}
+
+#game-over.hidden {
+    display: none;
+}
+
+#game-over.visible {
+    display: block;
+}
+
+#music-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+@keyframes moveObstacle {
+    from {
+        right: -40px; /* يبدأ من خارج الشاشة */
+    }
+    to {
+        right: 600px; /* يتحرك حتى نهاية الشاشة */
+    }
+}

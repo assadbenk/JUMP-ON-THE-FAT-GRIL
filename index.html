@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لعبة القفز على السمينات</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div id="dino"></div>
+        <div id="obstacle"></div>
+        <div id="reward"></div>
+        <div id="score">النقاط: 0</div>
+        <div id="reward-message"></div>
+        <div id="game-over" class="hidden">
+            <h1>انتهت اللعبة!</h1>
+            <p>النقاط النهائية: <span id="final-score">0</span></p>
+            <button id="restart-button">زيد العب</button>
+        </div>
+        <button id="music-toggle">🔊 </button>
+    </div>
+    <audio id="background-music" loop>
+        <source src="background-music.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="jump-sound">
+        <source src="jump-sound.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="reward-sound">
+        <source src="reward-sound.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="game-over-sound">
+        <source src="game-over-sound.mp3" type="audio/mpeg">
+    </audio>
+    <script src="script.js"></script>
+</body>
+</html>

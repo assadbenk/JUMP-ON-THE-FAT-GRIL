@@ -26,19 +26,20 @@ body {
 #dino {
     position: absolute;
     bottom: 0;
-    left: 50px;
-    width: 40px;
-    height: 40px;
+    left: 120px;
+    width: 50px;
+    height: 50px;
     background-image: url('dino.png'); /* صورة الديناصور */
     background-size: cover;
+    transition: background-image 0.1s ease-in-out; /* تأثير تغيير الصورة */
 }
 
 #obstacle {
     position: absolute;
     bottom: 0;
     right: -40px; /* يبدأ من خارج الشاشة */
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     background-image: url('cactus.png'); /* صورة العائق */
     background-size: cover;
     animation: moveObstacle 2s linear infinite; /* الحركة */
@@ -60,7 +61,7 @@ body {
     top: 10px;
     left: 10px;
     font-size: 20px;
-    color: #333;
+    color: #e30606;
 }
 
 #reward-message {
@@ -69,7 +70,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 24px;
-    color: green;
+    color: rgb(22, 176, 22);
     display: none;
 }
 

@@ -28,7 +28,7 @@ function jump() {
     jumpSound.play();
     let position = 0;
     const upInterval = setInterval(() => {
-        if (position >= 100) { // تقليل ارتفاع القفز
+        if (position >= 120) { // تقليل ارتفاع القفز
             clearInterval(upInterval);
             // الهبوط
             const downInterval = setInterval(() => {
@@ -128,6 +128,20 @@ function checkCollision() {
         // إيقاف حركة العوائق والمكافآت
         obstacle.style.animation = "none";
         reward.style.animation = "none";
+
+        // تغيير صورة الديناصور عند الاصطدام
+        dino.style.backgroundImage = "url('dino-hit.png')"; // صورة الديناصور عند الاصطدام
+
+        // تأثير الطيران عند الاصطدام
+        let flyPosition = 0;
+        const flyInterval = setInterval(() => {
+            if (flyPosition >= 200) {
+                clearInterval(flyInterval);
+            } else {
+                flyPosition += 3;
+                dino.style.bottom = flyPosition + "px";
+            }
+        }, 10);
     }
 }
 
@@ -145,6 +159,9 @@ restartButton.addEventListener("click", () => {
     // إعادة تشغيل حركة العوائق والمكافآت
     obstacle.style.animation = "moveObstacle 2s linear infinite";
     reward.style.animation = "moveObstacle 2s linear infinite";
+
+    // إعادة تعيين صورة الديناصور
+    dino.style.backgroundImage = "url('dino.png')";
 });
 
 // التحكم بالموسيقى
